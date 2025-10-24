@@ -34,7 +34,7 @@ def generate_key():
 # === Step 3: Upload a file ===
 def upload_file(source_path):
     if not os.path.isfile(source_path):
-        return False, "❌ Source file does not exist!"
+        return False, " Source file does not exist!"
 
     original_name = os.path.basename(source_path)
     key = generate_key()
@@ -44,7 +44,7 @@ def upload_file(source_path):
     try:
         shutil.copy2(source_path, dest_path)
     except Exception as e:
-        return False, f"❌ Failed to copy file: {e}"
+        return False, f" Failed to copy file: {e}"
 
     timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
 
@@ -53,7 +53,7 @@ def upload_file(source_path):
         writer = csv.writer(f)
         writer.writerow([key, original_name, stored_name, timestamp])
 
-    return True, f"✅ File uploaded successfully! Unique Key: {key}"
+    return True, f" File uploaded successfully! Unique Key: {key}"
 
 
 # === Step 4: Retrieve file info by key ===
@@ -70,21 +70,21 @@ def get_file_info_by_key(key):
 def download_file(key, target_dir):
     info = get_file_info_by_key(key)
     if not info:
-        return False, "❌ Invalid key!"
+        return False, " Invalid key!"
 
     stored_name = info["stored_filename"]
     src = os.path.join(STORAGE_DIR, stored_name)
     if not os.path.isfile(src):
-        return False, "⚠️ File missing in storage."
+        return False, " File missing in storage."
 
     os.makedirs(target_dir, exist_ok=True)
     dest = os.path.join(target_dir, info["original_filename"])
     try:
         shutil.copy2(src, dest)
     except Exception as e:
-        return False, f"❌ Download failed: {e}"
+        return False, f" Download failed: {e}"
 
-    return True, f"✅ File downloaded successfully to: {dest}"
+    return True, f" File downloaded successfully to: {dest}"
 
 
 # === Step 6: List all uploaded files ===
@@ -101,7 +101,7 @@ def list_all_files():
 def cli():
     ensure_setup()
     print("\n==============================")
-    print("📦 Simple Cloud File Storage System (Python Only)")
+    print(" Simple Cloud File Storage System (Python Only)")
     print("==============================")
     print("Commands: upload | download | list | info | exit")
 
@@ -109,7 +109,7 @@ def cli():
         cmd = input("\n>> ").strip().lower()
 
         if cmd == "exit":
-            print("👋 Exiting... Bye!")
+            print(" Exiting... Bye!")
             break
 
         elif cmd == "upload":
@@ -141,10 +141,10 @@ def cli():
                 for k, v in info.items():
                     print(f"{k}: {v}")
             else:
-                print("❌ No file found with that key.")
+                print(" No file found with that key.")
 
         else:
-            print("⚠️ Invalid command! Try: upload | download | list | info | exit")
+            print(" Invalid command! Try: upload | download | list | info | exit")
 
 
 # === Run the program ===
