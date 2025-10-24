@@ -1,8 +1,8 @@
-# 🌩️ Cloud-Based File Storage System 
+#  Cloud-Based File Storage System 
 
 ---
 
-## 🧠 Overview
+##  Overview
 This project simulates a simple **cloud-based file storage and retrieval system** using **pure Python**.  
 Users can upload files, receive a **unique key**, and later **download** their files using that key — similar to a mini Google Drive, but command-line based.
 
@@ -10,7 +10,7 @@ This project was developed as part of the **Valise Technologies Internship** und
 
 ---
 
-## ⚙️ Features
+##  Features
 - 📂 **Upload any file** and store it safely in a local `storage/` folder  
 - 🔑 **Generate a unique access key** for each uploaded file  
 - 📜 **Maintain a dataset (`file_database.csv`)** to store file details  
@@ -19,7 +19,7 @@ This project was developed as part of the **Valise Technologies Internship** und
 
 ---
 
-## 🏗️ Folder Structure
+##  Folder Structure
 Cloud_File_Storage/
 ├── main.py
 ├──downloads/
@@ -31,7 +31,7 @@ Cloud_File_Storage/
 
 ---
 
-## 🧰 Technologies Used
+##  Technologies Used
 | Component | Tool/Library |
 |------------|---------------|
 | Language | Python 3.10 |
@@ -42,7 +42,7 @@ Cloud_File_Storage/
 
 ---
 
-## 🚀 How to Run
+##  How to Run
 1. Open your terminal and navigate to the project folder:
    ```bash
    cd ~/Cloud_File_Storage
@@ -64,18 +64,18 @@ Key | Original Filename | Stored Filename | Uploaded At
 -------------------------------------------------------------
 99bb6c31 | pan.pdf | 99bb6c31_pan.pdf | 2025-10-24 12:48:03
 
-📊 Dataset (file_database.csv)
+Dataset (file_database.csv)
 key          original_filename        stored_filename        upload_timestamp
 99bb6c31     pan.pdf                  99bb6c31_pan.pdf       2025-10-24 12:48:03
 
 
-🧠 Future Improvements
+ Future Improvements
 	•	Add authentication (user login & password)
 	•	Add file expiry or sharing limits
 	•	Integrate with cloud storage APIs (AWS S3, Google Drive)
 	•	Add encryption for secure storage
 
-🏁 Conclusion
+ Conclusion
 
 This project successfully demonstrates file handling, dataset creation, and key-based access using only Python.
 It aligns with Valise Technologies’ learning goal: “Build efficient and simple solutions with clear logic and clean code.”
