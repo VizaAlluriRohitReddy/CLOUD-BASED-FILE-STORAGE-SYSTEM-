@@ -1,9 +1,7 @@
 # main.py
 # -------------------------------
 # Cloud-Based File Storage System (Simple Python Project)
-# Developed by: Viza Alluri Rohit Reddy
-# Internship: Valise Technologies | Team 10
-# -------------------------------
+
 
 import os
 import shutil
