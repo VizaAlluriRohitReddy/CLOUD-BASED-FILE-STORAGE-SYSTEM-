@@ -57,7 +57,7 @@ Cloud_File_Storage/
 Example Usage:
 >> upload
 Enter the full path of file to upload: /Users/vizaa/Downloads/pan.pdf
-✅ File uploaded successfully! Unique Key: 99bb6c31
+ File uploaded successfully! Unique Key: 99bb6c31
 
 >> list
 Key | Original Filename | Stored Filename | Uploaded At
